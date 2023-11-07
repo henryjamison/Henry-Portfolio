@@ -1,95 +1,83 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
 
-export default function Home() {
+import { useEffect, useRef } from 'react';
+import { useChat } from 'ai/react';
+import styles from './page.module.css';
+import Image from 'next/image';
+import AIProfilePic from '../public/cartoon-logo.png';
+import UserProfilePic from '../public/user.png'
+import sendDarkIcon from '../public/send-icon.png'
+import sendWhiteIcon from '../public/send-icon-white.png'
+
+
+
+export default function Chat() {
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const messagesContainerRef = useRef<HTMLDivElement | null>(null);
+  
+  function formatContent(content:string) {
+    return content.replace(/```(.*?)```/gs, '<div><code>$1</code></div>');
+  }
+
+
+useEffect(() => {
+  if (messagesContainerRef.current) {
+    messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+  }
+}, [messages]);
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+      <h1>Hello</h1>
+      <div className={styles.conversation} ref={messagesContainerRef}>
+        {messages.map(m => (
+          console.log(m.role == 'assistant' ? m.content : ''),
+          <div key={m.id} className={`${styles.message} ${m.role === 'user' ? styles.user : styles.bot}`}>
+            {m.role === 'user' ? (
+              <div className={styles.user}>
+                <Image
+                  src={UserProfilePic}
+                  width={50}
+                  height={50}
+                  alt="User-Image"
+                  className={styles.profilePic}
+                />
+                <span>{m.content}</span>
+              </div>
+            ) : (
+              <div className={styles.bot}>
+                <Image
+                  src={AIProfilePic}
+                  width={50}
+                  height={50}
+                  alt="AI-Icon"
+                  className={styles.profilePic}
+                />
+                <span>{formatContent(m.content)}</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div className={styles.inputContainer}>
+        <form className={styles.inputText} onSubmit={handleSubmit}>
+          <input
+            value={input}
+            className={styles.input}
+            onChange={handleInputChange}
+            placeholder="Say something..."
+          />
+          <button className={input === "" ? styles.noInput : styles.subBtn} type="submit">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+              src={input === "" ? sendDarkIcon : sendWhiteIcon}
+              width={25}
+              height={25}
+              alt="AI-Icon"
+              className={styles.subIcon}
             />
-          </a>
-        </div>
+          </button>
+        </form>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </main >
+  );
 }
