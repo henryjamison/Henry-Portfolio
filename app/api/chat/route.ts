@@ -21,8 +21,8 @@ export async function POST(req: Request) {
 
   // Ask OpenAI for a streaming chat completion given the prompt
   const response: any = await openai.chat.completions.create({
-    // model: 'ft:gpt-3.5-turbo-0613:personal::8HGtiHWp',
-    model: 'gpt-3.5-turbo',
+    model: 'ft:gpt-3.5-turbo-0613:personal::8HGtiHWp',
+    // model: 'gpt-3.5-turbo',
     stream: true,
     messages,
     max_tokens: 50,
