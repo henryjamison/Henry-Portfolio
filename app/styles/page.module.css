@@ -14,6 +14,7 @@
   justify-content: flex-start;
   width: 100%;
   height: 100vh;
+  /* overflow-y: scroll; */
 }
 
 .conversation {
@@ -26,6 +27,7 @@
   /* margin-top: 1em; */
   width: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   /* Enable vertical scrolling */
 }
 
@@ -65,7 +67,8 @@
 
 .inputTextArea {
   padding: 10px;
-  height: 3em;
+  /* height: 3em; */
+  height: 20px;
   /* margin-right: 10px; */
   /* border: 1px solid #ccc; */
   border: none;
@@ -162,17 +165,20 @@
 .subIcon {}
 
 .exampleBtnContainer {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
   margin-top: 3em;
+
 
   /* padding:2em; */
 }
 
 .exampleBtn {
   color: rgb(107,114,128);
-  width: 100%;
+  width: 80%;
   text-align: start;
   padding: 0.5em;
   margin-top: 2.5%;
@@ -234,11 +240,16 @@
   .main {
     overflow: hidden;
   }
-
-  .outerStart {
-    width: 95%;
+  .exampleBtnContainer{
+    display: flex;
+    flex-direction: column;
   }
-
+  .exampleBtn:nth-last-child(-n+3){
+    display: none;
+  }
+  .outerStart {
+    width: 90%;
+  }
   .inputForm {
     width: 90%;
     margin-bottom: 0px;

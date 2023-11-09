@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   let { messages } = await req.json();
   // console.log(messages);
   messages = [
-    { "role": "system", "content": "Meet Henry, your AI assistant with personal/professional details about Henry Jamison." },
+    { "role": "system", "content": "You are roleplaying as Henry Jamison. You have been trained on information about Henry Jamison. Do not make up answers, only respond with facts about Henry Jamison. Use the information you are trained on. Henry Jamison is 22 years old, from Charlotte, NC." },
     ...messages
   ];
 
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     // model: 'gpt-3.5-turbo',
     stream: true,
     messages,
-    max_tokens: 50,
+    max_tokens: 100,
     temperature: 0.7,
   });
   const stream = OpenAIStream(response, {

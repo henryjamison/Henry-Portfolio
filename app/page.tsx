@@ -10,7 +10,7 @@ import UserProfilePic from '../public/user.png'
 import sendDarkIcon from '../public/send-arrow-gray.png'
 import sendWhiteIcon from '../public/send-arrow-white.png'
 import Header from './components/header';
-
+import { CopyBlock } from "react-code-blocks";
 
 
 export default function Chat() {
@@ -22,12 +22,16 @@ export default function Chat() {
 
 
   function formatContent(content: string) {
+    // return content.replace(/```(.*?)```/gs, '<div><code>$1</code></div>');
     return content.replace(/```(.*?)```/gs, '<div><code>$1</code></div>');
   }
   const examples = [
     "Where are you from?",
     "Tell me about your previous work experience.",
-    "Do you have any coding experience?"
+    "Do you have any coding experience?",
+    "Tell me about yourself.",
+    "What do you like to do for fun?",
+    "Where do you go to school?"
   ]
 
   // function addMessageToHistory(message:any) {
@@ -52,7 +56,7 @@ export default function Chat() {
   // // Call the function to load the conversation history when the page loads
   // // loadConversationHistory();
 
-  const handleFormSubmit = (e:any) => {
+  const handleFormSubmit = (e: any) => {
     handleSubmit(e);
 
     // Set formSubmitted to true
@@ -68,22 +72,22 @@ export default function Chat() {
   return (
     <main className={styles.main}>
       <Header />
-      <div className={formSubmitted ? styles.outerStartHidden: styles.outerStart}>
+      <div className={formSubmitted ? styles.outerStartHidden : styles.outerStart}>
         <div className={styles.innerStart}>
           <div className={styles.upperAbout}>
-          <Image
-            src={AIProfilePic}
-            width={100}
-            height={100}
-            alt="User-Image"
-          className={styles.examplePic}
-          />
-          <h3 className={styles.exampleHeaderText}>Hi, I'm Henry!</h3>
-          <p>I'm an AI bot fine-tuned on the life of Henry Jamison</p>
-          <p>Feel free to ask me anything, or select a prompt below to start a conversation.</p>
+            <Image
+              src={AIProfilePic}
+              width={100}
+              height={100}
+              alt="User-Image"
+              className={styles.examplePic}
+            />
+            <h3 className={styles.exampleHeaderText}>Hi, I'm Henry!</h3>
+            <p>I'm an AI bot fine-tuned on the life of Henry Jamison</p>
+            <p>Feel free to ask me anything, or select a prompt below to get to know me!</p>
           </div>
           <div className={styles.exampleBtnContainer}>
-          {examples.map((example, i) => (
+            {examples.map((example, i) => (
               <button
                 key={i}
                 onClick={() => {
@@ -130,18 +134,12 @@ export default function Chat() {
       <div className={styles.inputContainer}>
         <form className={styles.inputForm}
           ref={formRef} onSubmit={handleFormSubmit}>
-          {/* <input
-            value={input}
-            className={styles.inputTextArea}
-            onChange={handleInputChange}
-            placeholder="Say something..."
-          /> */}
           <Textarea
             ref={inputRef}
             tabIndex={0}
             required
             rows={1}
-            autoFocus
+            // autoFocus
             placeholder="Send a message"
             value={input}
             onChange={handleInputChange}
