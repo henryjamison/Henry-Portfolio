@@ -97,9 +97,14 @@
 
 .examplePic{
     width: 100%;
-    height: 700px;
+    height: 100%;
     /* padding: 10px; */
+    transition: transform 0.5s ease;
+    transform: scale(0.9)
 }   
+.examplePic:hover{
+        transform: scale(1);
+}
 .projectFour{
     padding: 10px;
 }
@@ -112,5 +117,12 @@
         width: 100%;
         padding: 0px    ;
     }
+    .examplePic{
+        transition: transform 0s ease;
+        transform: scale(.98);
+    }
+    .examplePic:hover{
+        transform: none;
+}
     
 }

@@ -97,11 +97,13 @@ export default function OtherProjects() {
                 <p className={styles.p}>
                     This project includes a Y86-64 Simulator written fully in C/C++. Y86-64 simplifies many aspects of a real-world architecture like x86-64 to focus on core concepts such as pipelining, instruction execution, and memory hierarchy. This simulator handles all instrcution set architecture, memory calls, piping, loading, and debugging. This project allowed me to understand computer architecture/memory a lot better, which, in-turn made me a better programmer. Below is a screenshot of sample console output from the first two lines of a function that finds the absolute value of a number. 
                 </p>
+                <div className={styles.imgWrapper}>
                 <Image
                     src={y86}
                     alt="User-Image"
                     className={styles.examplePic}
                 />
+                </div>
             </div>
         </main>
     );
