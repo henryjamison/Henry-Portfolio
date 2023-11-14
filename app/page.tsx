@@ -108,10 +108,10 @@ export default function Chat() {
               <div className={styles.user}>
                 <Image
                   src={UserProfilePic}
-                  width={50}
-                  height={50}
+                  width={40}
+                  height={40}
                   alt="User-Image"
-                  className={styles.profilePic}
+                  className={styles.userPic}
                 />
                 <span className={styles.messageContent}>{m.content}</span>
               </div>

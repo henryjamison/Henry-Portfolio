@@ -89,6 +89,13 @@
   border-radius: 50%;
   margin-right: 1em;
 }
+.userPic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 1em;
+  padding: 5px;
+}
 
 .inputContainer {
   display: flex;
