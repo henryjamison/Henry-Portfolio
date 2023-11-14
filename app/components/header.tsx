@@ -2,6 +2,7 @@
 import styles from '../styles/header.module.css';
 import Image from 'next/image';
 import AIProfilePic from '../../public/cartoon-logo.png';
+import Link from 'next/link';
 
 
 
@@ -18,9 +19,18 @@ export default function Header() {
                 />
             </div> */}
             <div className={styles.links}>
-                <div className={styles.link}><a className={styles.a} href="">Chat</a></div>
-                <div className={styles.link}><a className={styles.a} href="">Other Projects</a></div>
-                <div className={styles.link}><a className={styles.a} href="">Contact Info</a></div>
+                <div className={styles.link}>
+                    {/* <a className={styles.a} href="">Chat</a> */}
+                    <Link href='/' className={styles.a}> Chat</Link>
+                </div>
+                <div className={styles.link}>
+                    {/* <a className={styles.a} href="">Other Projects</a> */}
+                    <Link href='other-projects' className={styles.a}> Other Projects</Link>
+                </div>
+                <div className={styles.link}>
+                    {/* <a className={styles.a} href="">Contact Info</a> */}
+                    <Link href='contact' className={styles.a}> Contact Info</Link>
+                </div>
             </div>
         </div>
     );

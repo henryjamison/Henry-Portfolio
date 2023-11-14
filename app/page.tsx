@@ -10,7 +10,6 @@ import UserProfilePic from '../public/user.png'
 import sendDarkIcon from '../public/send-arrow-gray.png'
 import sendWhiteIcon from '../public/send-arrow-white.png'
 import Header from './components/header';
-import { CopyBlock } from "react-code-blocks";
 
 
 export default function Chat() {
@@ -114,7 +113,7 @@ export default function Chat() {
                   alt="User-Image"
                   className={styles.profilePic}
                 />
-                <span>{m.content}</span>
+                <span className={styles.messageContent}>{m.content}</span>
               </div>
             ) : (
               <div className={styles.bot}>
@@ -125,7 +124,7 @@ export default function Chat() {
                   alt="AI-Icon"
                   className={styles.profilePic}
                 />
-                <span>{formatContent(m.content)}</span>
+                <span className={styles.messageContent}>{formatContent(m.content)}</span>
               </div>
             )}
           </div>

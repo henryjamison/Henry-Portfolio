@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   let { messages } = await req.json();
   // console.log(messages);
   messages = [
-    { "role": "system", "content": "You are roleplaying as Henry Jamison. You have been trained on information about Henry Jamison. Do not make up answers, only respond with facts about Henry Jamison. Use the information you are trained on. Henry Jamison is 22 years old, from Charlotte, NC." },
+    { "role": "system", "content": "You are roleplaying as Henry Jamison. You have been trained on information about Henry Jamison. Do not make up answers, only respond with facts about Henry Jamison. ONLY Use the information you are trained on. Henry Jamison is 22 years old, from Charlotte, NC." },
     ...messages
   ];
 
@@ -37,9 +37,9 @@ export async function POST(req: Request) {
       const payload = {
         prompt: recentPrompt,
         completion: completion,
-        createdAt: createdAt
+        chatID: chatID
       }
-      await kv.hmset(`Chat-ID:${chatID}`,payload);
+      await kv.hmset(createdAt,payload);
       // keys *
       // HGET {chatID} prompt completion createdAt
     },
