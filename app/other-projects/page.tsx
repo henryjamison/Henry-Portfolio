@@ -64,6 +64,8 @@ export default function OtherProjects() {
                     This project tweets out a random U.S. Patent from <span><a className={styles.inlineLink} href="https://patents.google.com/">Google Patents</a></span> each hour. I think Patent art is super cool looking and is often very detailed, so I decided to make this bot to see what kind of patent art is out there. It turns out there are a ton of patents out there for just about anything you can think of. Tweets include the patent name, the current owner/inventor, the patent number, a link to the Google Patent page, 1-4 images, and an abstract in the replies if available. Only patents with pictures are tweeted.
                 </p>
                 <div className={styles.desc}>
+                    {/* For light theme tweets */}
+                    {/* <div className={styles.tweetWrapper} data-theme="light"> */}
                     <div className={styles.tweetWrapper}>
                         {/* Possibly have a function that gets most recent tweet id? */}
                         <Tweet id={id} />
@@ -87,13 +89,13 @@ export default function OtherProjects() {
                     Website images coming soon
                 </p>
                 <p className={styles.p}>
-                    This project was made with python and flask for our front-end. For our model we used the Scikit learn package.
+                    This project was made with python and we used flask for our front-end. For our model we used the Scikit learn package.
                 </p>
             </div>
             <div className={styles.projectFour}>
                 <a href="" target='_blank' className={styles.a}>Y86-64 Simulator</a>
                 <p className={styles.p}>
-                    This project includes a Y86-64 Simulator written fully in C/C++. This simulator handles all memory calls, piping, instrcutions, loading, and debugging. This project allowed me to understand the computer architecture/memory much better, which in tun made me a better programmer. This was my first introduction to C/C++. Below is a screenshot of sample console output from the first two lines of a function that finds the absolute value of a number. 
+                    This project includes a Y86-64 Simulator written fully in C/C++. Y86-64 simplifies many aspects of a real-world architecture like x86-64 to focus on core concepts such as pipelining, instruction execution, and memory hierarchy. This simulator handles all instrcution set architecture, memory calls, piping, loading, and debugging. This project allowed me to understand computer architecture/memory a lot better, which, in-turn made me a better programmer. Below is a screenshot of sample console output from the first two lines of a function that finds the absolute value of a number. 
                 </p>
                 <Image
                     src={y86}
