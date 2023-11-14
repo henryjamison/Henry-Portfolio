@@ -4,7 +4,6 @@ import styles from '../styles/other-projects.module.css';
 import { Tweet } from 'react-tweet';
 import Image from 'next/image';
 import y86 from '../../public/Y86.png';
-import y86Two from '../../public/Y86Two.png';
 
 // import path from '../../public/videos/path.mp4';
 
@@ -97,7 +96,7 @@ export default function OtherProjects() {
                     This project includes a Y86-64 Simulator written fully in C/C++. This simulator handles all memory calls, piping, instrcutions, loading, and debugging. This project allowed me to understand the computer architecture/memory much better, which in tun made me a better programmer. This was my first introduction to C/C++. Below is a screenshot of sample console output from the first two lines of a function that finds the absolute value of a number. 
                 </p>
                 <Image
-                    src={y86Two}
+                    src={y86}
                     alt="User-Image"
                     className={styles.examplePic}
                 />
