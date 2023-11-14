@@ -108,7 +108,8 @@ export default function OtherProjects() {
             <div id='projectFive' className={styles.projectFive}>
                 <a href="#projectFive" className={styles.a}>Automated Gym Reservation Bot</a>
                 <p className={styles.p}>
-                   This was my first practical coding project as a freshman at App State. During COVID-19 our university gym's were limited to 10 people per hour, and you had to book a time slot online. With 20,000+ students at my university, as you can imagine the time slots would fill up quick. I would constantly forget to reserve a spot a day in advance, and then would not be able to work out. At the time I was getting in to selenium and python automation, so I decided to make an automated bot that would reserve gym slots for my desired time.
+                   {/* This was my first practical coding project as a freshman at App State. During COVID-19 our university gym's were limited to 10 people per hour, and I had to book a time slot online. With 20,000+ students at my university, as you can imagine the time slots would fill up quick. I would constantly forget to reserve a spot a day in advance, and then would not be able to work out. At the time I was getting in to selenium and python automation, so I decided to make an automated bot that would reserve gym slots for my desired time. */}
+                   As a freshman at App State, I make my first practical coding project amid COVID-19 restrictions at my university gym. With just 10 slots available every hour and high demand among 20,000+ students, securing a workout time online became a challenge. Driven by my interest Python automation at the time, I developed a bot using Selenium to automate the reservation process. I was able to secure a spot every day without worry of missing out until the restrictions were lifted.
                 </p>
             </div>
         </main>

@@ -39,6 +39,7 @@
   border: 2px solid #ccc;
   border-radius: 10px;
   align-items: center;
+  background-color: white;
 }
 
 .inputForm:focus-visible,
@@ -215,9 +216,15 @@
   .inputForm {
     width: 90%;
     margin-bottom: 0px;
+    
   }
 
   .inputContainer {
     width: 100%;
   }
+  .bot,
+  .user {
+  width: 100%;
+  margin-left: 1em;
+}
 }

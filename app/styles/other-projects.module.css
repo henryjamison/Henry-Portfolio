@@ -120,11 +120,7 @@
         padding: 0px    ;
     }
     .examplePic{
-        transition: transform 0s ease;
-        transform: scale(.98);
+        transform: scale(.90);
     }
-    .examplePic:hover{
-        transform: none;
 }
     
-}
