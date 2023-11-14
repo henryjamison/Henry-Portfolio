@@ -21,11 +21,12 @@ export async function POST(req: Request) {
 
   // Ask OpenAI for a streaming chat completion given the prompt
   const response: any = await openai.chat.completions.create({
-    model: 'ft:gpt-3.5-turbo-0613:personal::8HGtiHWp',
+    // model: 'ft:gpt-3.5-turbo-0613:personal::8HGtiHWp',
+    model: 'ft:gpt-3.5-turbo-0613:personal::8KiKhw1g',
     // model: 'gpt-3.5-turbo',
     stream: true,
     messages,
-    max_tokens: 100,
+    max_tokens: 200,
     temperature: 0.7,
   });
   const stream = OpenAIStream(response, {

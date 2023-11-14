@@ -78,8 +78,8 @@ export default function OtherProjects() {
                     </p>
                 </div>
             </div>
-            <div className={styles.projectThree}>
-                <a href="" target='_blank' className={styles.a}>NFL Fantasy Football Point Predictor</a>
+            <div id='projectThree' className={styles.projectThree}>
+            <a href="#projectThree" className={styles.a}>NFL Fantasy Football Point Predictor</a>
                 <p className={styles.p}>
                     Im a big fan of fantasy football so for my Capstone project my partner and I decided to make a score predictor model trained on our own data. This was my first introduction to training models and using Scikit learn. We sourced all of our data from
                     <span><a className={styles.inlineLink} href='https://www.pro-football-reference.com/fantasy/'> Pro Football Reference</a></span>. Our search function includes autofill for all fantasy players. Real-time game status is also displayed for each player which is sourced from <span><a className={styles.inlineLink} href="https://www.espn.com/nfl/injuries"> ESPN</a></span>. On top of predictions, historical fantasy data tables are also provided which can be filtered by NFL team/position/year and can be sorted by any table value.
@@ -92,8 +92,8 @@ export default function OtherProjects() {
                     This project was made with python and we used flask for our front-end. For our model we used the Scikit learn package.
                 </p>
             </div>
-            <div className={styles.projectFour}>
-                <a href="" target='_blank' className={styles.a}>Y86-64 Simulator</a>
+            <div id='projectFour' className={styles.projectFour}>
+                <a href="#projectFour" className={styles.a}>Y86-64 Simulator</a>
                 <p className={styles.p}>
                     This project includes a Y86-64 Simulator written fully in C/C++. Y86-64 simplifies many aspects of a real-world architecture like x86-64 to focus on core concepts such as pipelining, instruction execution, and memory hierarchy. This simulator handles all instrcution set architecture, memory calls, piping, loading, and debugging. This project allowed me to understand computer architecture/memory a lot better, which, in-turn made me a better programmer. Below is a screenshot of sample console output from the first two lines of a function that finds the absolute value of a number. 
                 </p>
@@ -104,6 +104,12 @@ export default function OtherProjects() {
                     className={styles.examplePic}
                 />
                 </div>
+            </div>
+            <div id='projectFive' className={styles.projectFive}>
+                <a href="#projectFive" className={styles.a}>Automated Gym Reservation Bot</a>
+                <p className={styles.p}>
+                   This was my first practical coding project as a freshman at App State. During COVID-19 our university gym's were limited to 10 people per hour, and you had to book a time slot online. With 20,000+ students at my university, as you can imagine the time slots would fill up quick. I would constantly forget to reserve a spot a day in advance, and then would not be able to work out. At the time I was getting in to selenium and python automation, so I decided to make an automated bot that would reserve gym slots for my desired time.
+                </p>
             </div>
         </main>
     );
