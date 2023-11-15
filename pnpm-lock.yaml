@@ -35,6 +35,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  react-syntax-highlighter:
+    specifier: ^15.5.0
+    version: 15.5.0(react@18.2.0)
   react-textarea-autosize:
     specifier: ^8.5.3
     version: 8.5.3(@types/react@18.2.36)(react@18.2.0)
@@ -52,6 +55,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18
     version: 18.2.14
+  '@types/react-syntax-highlighter':
+    specifier: ^15.5.10
+    version: 15.5.10
   eslint:
     specifier: ^8
     version: 8.53.0
@@ -386,7 +392,6 @@ packages:
     resolution: {integrity: sha512-Vf8nNkGHnjwK37b2wDs92zJSAWS2Mb57NcYHgajCNssHeTNEixvjINnXJkKdY0V0/eLrYkPP1xDKvNmYIr4HIg==}
     dependencies:
       '@types/react': 18.2.36
-    dev: false
 
   /@types/react@18.2.36:
     resolution: {integrity: sha512-o9XFsHYLLZ4+sb9CWUYwHqFVoG61SesydF353vFMMsQziiyRu8np4n2OYMUSDZ8XuImxDr9c5tR7gidlH29Vnw==}
