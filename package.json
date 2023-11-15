@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.15",
+    "@vercel/analytics": "^1.1.1",
     "@vercel/kv": "^0.2.4",
     "ai": "^2.2.20",
     "nanoid": "^5.0.3",
