@@ -45,7 +45,7 @@ export default function OtherProjects() {
                 <a href="https://henryjamison.github.io/PathFinding/" target='_blank' className={styles.a}>Dijkstra's Pathfinding Algorithm Visualization</a>
                 <video className={styles.video} width="700" height="500" autoPlay muted loop playsInline>
                     {/* <source src={path} type="video/mp4"/> */}
-                    <source src={(require('./videos/path.mp4'))} />
+                    <source src={(require('./videos/path-compressed.mp4'))} />
                 </video>
                 <p className={styles.p}>
                     This project focuses on visualizing the <span><a className={styles.inlineLink} href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's Pathfinding Algorithm</a></span> in real time. I was introduced to pathfinding visualization a few years ago and knew I wanted to make a project like this ever since. This project allows the user to draw their own walls on the grid to create their own paths, or they can generate a random one. Visual elements displayed on the grid can also be changed by the user.
@@ -86,7 +86,7 @@ export default function OtherProjects() {
                 <div className={styles.nflVideoWrapper}>
                     <video className={styles.nflVideo} width="700" height="600" autoPlay muted loop playsInline>
                         {/* <source src={path} type="video/mp4"/> */}
-                        <source src={(require('./videos/nfl-recording.mp4'))} />
+                        <source src={(require('./videos/nfl-record-compressed.mp4'))} />
                     </video>
                 </div>
                 <p className={styles.p}>
