@@ -151,6 +151,7 @@ export default function Chat() {
             spellCheck={false}
             className={styles.inputTextArea}
           />
+          {/* <div className={styles.loading}></div> */}
           <button className={input === "" ? styles.noInputBtn : styles.subBtn} type="submit">
             <Image
               src={input === "" ? sendDarkIcon : sendWhiteIcon}

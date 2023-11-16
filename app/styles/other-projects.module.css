@@ -51,6 +51,15 @@
 .video{
     width: 100%;
 }
+.nflVideoWrapper{
+    /* margin-top: -5em; */
+    height: 400px;
+}
+.nflVideo{
+    transform: scale(0.90);
+    width: 100%;
+    object-position: top;
+}
 .inlineLink {
     all: unset;
     cursor: pointer;
@@ -117,6 +126,9 @@
     }
     .examplePic{
         transform: scale(.90);
+    }
+    .nflVideoWrapper{
+        height: 300px;
     }
 }
     

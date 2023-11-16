@@ -187,13 +187,15 @@ export default function OtherProjects() {
             <div id='projectThree' className={styles.projectThree}>
                 <a href="#projectThree" className={styles.a}>NFL Fantasy Football Point Predictor</a>
                 <p className={styles.p}>
-                    Im a big fan of fantasy football so for my Capstone project my partner and I decided to make a score predictor model trained on data we sourced. This was my first introduction to training models and using Scikit learn. We sourced all of our data from
-                    <span><a className={styles.inlineLink} href='https://www.pro-football-reference.com/fantasy/'> Pro Football Reference</a></span>. Our search function includes autofill for all fantasy players. Real-time game status is also displayed for each player which is sourced from <span><a className={styles.inlineLink} href="https://www.espn.com/nfl/injuries"> ESPN</a></span>. On top of predictions, historical fantasy data tables are also provided which can be filtered by NFL team/position/year and can be sorted by any table value.
-                    <br />
-                    <br />
-
-                    This website is currently in progress, pictures will be posted soon.
+                    Im a big fan of fantasy football, so for my Capstone project my partner and I decided to make a score predictor model trained on data we sourced. The predictions displayed are for the current NFL week. This was my first introduction to training models and using Scikit learn. We sourced all of our data from
+                    <span><a className={styles.inlineLink} href='https://www.pro-football-reference.com/fantasy/'> Pro Football Reference</a></span>. Our search function includes autofill for all fantasy players. Real-time game status is also displayed for each player which is sourced from <span><a className={styles.inlineLink} href="https://www.espn.com/nfl/injuries"> ESPN</a></span>. On top of predictions, historical fantasy data tables are also provided which can be filtered by NFL team/position/year and can be sorted by any table value. This projects is still in progress.
                 </p>
+                <div className={styles.nflVideoWrapper}>
+                    <video className={styles.nflVideo} width="700" height="600" autoPlay muted loop playsInline>
+                        {/* <source src={path} type="video/mp4"/> */}
+                        <source src={(require('./videos/nfl-recording.mp4'))} />
+                    </video>
+                </div>
                 <p className={styles.p}>
                     This project was made with python and we used flask for our front-end. For our model we used the Scikit learn package.
                 </p>
@@ -201,7 +203,7 @@ export default function OtherProjects() {
             <div id='projectFour' className={styles.projectFour}>
                 <a href="#projectFour" className={styles.a}>Y86-64 Simulator</a>
                 <p className={styles.p}>
-                    This project includes a Y86-64 Simulator written fully in C/C++. Y86-64 simplifies many aspects of a real-world architecture like x86-64 to focus on core concepts such as pipelining, instruction execution, and memory hierarchy. This simulator handles all instrcution set architecture, memory calls, piping, loading, debugging, and compiling. This project allowed me to understand computer architecture/memory a lot better, which, in-turn made me a better programmer. 
+                    This project includes a Y86-64 Simulator written fully in C/C++. Y86-64 simplifies many aspects of a real-world architecture like x86-64 to focus on core concepts such as pipelining, instruction execution, and memory hierarchy. This simulator handles all instrcution set architecture, memory calls, piping, loading, debugging, and compiling. This project allowed me to understand computer architecture/memory a lot better, which, in-turn made me a better programmer.
 
                     {/* Below are some sample screenshots of an input file that finds the absolute value of a number, the compiled file, and sample output to the console as the simulator steps through the program. */}
                 </p>
@@ -226,7 +228,7 @@ export default function OtherProjects() {
                     </SyntaxHighlighter>
                 </div>
                 <p className={styles.p}>
-                   That input code was then compiled into a y86 assembly object that could then be read by the simulator.
+                    That input code was then compiled into a y86 assembly object that could then be read by the simulator.
                 </p>
                 <div className={styles.codeWrapper}>
                     <SyntaxHighlighter className={styles.code} language="x86-asm" style={gruvboxDark}>
@@ -234,7 +236,7 @@ export default function OtherProjects() {
                     </SyntaxHighlighter>
                 </div>
                 <p className={styles.p}>
-                  Once the simulator is run with the compiled code, the following ouput is produced. This shows how the simulator steps through the program, and keeps track of registers, flags, memory values, pipelines, etc... The following output is cut short for performance reasons.
+                    Once the simulator is run with the compiled code, the following ouput is produced. This shows how the simulator steps through the program, and keeps track of registers, flags, memory values, pipelines, etc... The following output is cut short for performance reasons.
                 </p>
                 <div className={styles.codeWrapper}>
                     <SyntaxHighlighter className={styles.code} language="x86-asm" style={gruvboxDark} wrapLongLines={true}>
