@@ -2,121 +2,14 @@
 import Header from '../components/header';
 import styles from '../styles/other-projects.module.css';
 import { Tweet } from 'react-tweet';
-import Image from 'next/image';
-import y86 from '../../public/Y86.png';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula, gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-import output from './asmOutput.js';
-// import compiled from '../../public/compiled.png';
-// import input from '../../public/input.png';
+import strings from './asmOutput.js';
 
 export default function OtherProjects() {
-
-    const inputCode = `      .pos 0
-    irmovq list, %rax
-    mrmovq (%rax), %rdx
-    xorq %rcx, %rcx
-    nop
-    nop
-    subq %rdx, %rcx
-    cmovl %rdx, %rcx
-    rmmovq %rcx, (%rax)
-    irmovq 8, %rsi
-    addq %rsi, %rax
-    mrmovq (%rax), %rdx
-    xorq %rcx, %rcx
-    nop
-    nop
-    subq %rdx, %rcx
-    cmovl %rdx, %rcx
-    rmmovq %rcx, (%rax)
-    addq %rsi, %rax
-    mrmovq (%rax), %rdx
-    xorq %rcx, %rcx
-    nop
-    nop
-    subq %rdx, %rcx
-    cmovl %rdx, %rcx
-    rmmovq %rcx, (%rax)
-    addq %rsi, %rax
-    mrmovq (%rax), %rdx
-    xorq %rcx, %rcx
-    nop
-    nop
-    subq %rdx, %rcx
-    cmovl %rdx, %rcx
-    rmmovq %rcx, (%rax)
-    addq %rsi, %rax
-    mrmovq (%rax), %rdx
-    xorq %rcx, %rcx
-    nop
-    nop
-    subq %rdx, %rcx
-    cmovl %rdx, %rcx
-    rmmovq %rcx, (%rax)
-    addq %rsi, %rax
-    halt
-    
-          .align 8
-    list: .quad -2            #at end: 2
-          .quad 5             #at end: 5 
-          .quad -15           #at end: f
-          .quad 0             #at end: 0
-          .quad -1            #at end: 1
-    `;
-    const compiledCode = `0x000:                      |       .pos 0
-0x000: 30f0b000000000000000 | irmovq list, %rax
-0x00a: 50200000000000000000 | mrmovq (%rax), %rdx
-0x014: 6311                 | xorq %rcx, %rcx
-0x016: 10                   | nop
-0x017: 10                   | nop
-0x018: 6121                 | subq %rdx, %rcx
-0x01a: 2221                 | cmovl %rdx, %rcx
-0x01c: 40100000000000000000 | rmmovq %rcx, (%rax)
-0x026: 30f60800000000000000 | irmovq 8, %rsi
-0x030: 6060                 | addq %rsi, %rax
-0x032: 50200000000000000000 | mrmovq (%rax), %rdx
-0x03c: 6311                 | xorq %rcx, %rcx
-0x03e: 10                   | nop
-0x03f: 10                   | nop
-0x040: 6121                 | subq %rdx, %rcx
-0x042: 2221                 | cmovl %rdx, %rcx
-0x044: 40100000000000000000 | rmmovq %rcx, (%rax)
-0x04e: 6060                 | addq %rsi, %rax
-0x050: 50200000000000000000 | mrmovq (%rax), %rdx
-0x05a: 6311                 | xorq %rcx, %rcx
-0x05c: 10                   | nop
-0x05d: 10                   | nop
-0x05e: 6121                 | subq %rdx, %rcx
-0x060: 2221                 | cmovl %rdx, %rcx
-0x062: 40100000000000000000 | rmmovq %rcx, (%rax)
-0x06c: 6060                 | addq %rsi, %rax
-0x06e: 50200000000000000000 | mrmovq (%rax), %rdx
-0x078: 6311                 | xorq %rcx, %rcx
-0x07a: 10                   | nop
-0x07b: 10                   | nop
-0x07c: 6121                 | subq %rdx, %rcx
-0x07e: 2221                 | cmovl %rdx, %rcx
-0x080: 40100000000000000000 | rmmovq %rcx, (%rax)
-0x08a: 6060                 | addq %rsi, %rax
-0x08c: 50200000000000000000 | mrmovq (%rax), %rdx
-0x096: 6311                 | xorq %rcx, %rcx
-0x098: 10                   | nop
-0x099: 10                   | nop
-0x09a: 6121                 | subq %rdx, %rcx
-0x09c: 2221                 | cmovl %rdx, %rcx
-0x09e: 40100000000000000000 | rmmovq %rcx, (%rax)
-0x0a8: 6060                 | addq %rsi, %rax
-0x0aa: 00                   | halt
-                            | 
-0x0b0:                      |       .align 8
-0x0b0: feffffffffffffff     | list: .quad -2            #at end: 2
-0x0b8: 0500000000000000     |       .quad 5             #at end: 5 
-0x0c0: f1ffffffffffffff     |       .quad -15           #at end: f
-0x0c8: 0000000000000000     |       .quad 0             #at end: 0
-0x0d0: ffffffffffffffff     |       .quad -1            #at end: 1
-`;
+    const inputCode = strings[0];
+    const compiledCode = strings[1];
+    const output = strings[2];
 
     const tweetIds = [
 
