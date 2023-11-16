@@ -34,7 +34,8 @@ export async function POST(req: Request) {
       const length = messages.length;
       const recentPrompt = messages[length - 1].content;
       const chatID = nanoid();
-      const createdAt = new Date(Date.now()).toLocaleString();
+      const options = { timeZone: 'America/New_York' };
+      const createdAt = new Date(Date.now()).toLocaleString('en-US', options);
       const payload = {
         prompt: recentPrompt,
         completion: completion,
