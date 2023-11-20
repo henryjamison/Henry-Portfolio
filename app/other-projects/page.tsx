@@ -43,14 +43,12 @@ export default function OtherProjects() {
             <div className={styles.projectOne}>
                 {/* <h2>Dijkstra's Pathfinding Algorithm Visualization</h2> */}
                 <a href="https://henryjamison.github.io/PathFinding/" target='_blank' className={styles.a}>Dijkstra's Pathfinding Algorithm Visualization</a>
-                <video className={styles.video} width="700" height="500" autoPlay muted loop playsInline>
-                    {/* <source src={path} type="video/mp4"/> */}
-                    <source src={(require('./videos/path-compressed.mp4'))} />
-                </video>
                 <p className={styles.p}>
                     This project focuses on visualizing the <span><a className={styles.inlineLink} href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's Pathfinding Algorithm</a></span> in real time. I was introduced to pathfinding visualization a few years ago and knew I wanted to make a project like this ever since. This project allows the user to draw their own walls on the grid to create their own paths, or they can generate a random one. Visual elements displayed on the grid can also be changed by the user.
                 </p>
-
+                <video className={styles.video} width="700" height="500" autoPlay muted loop playsInline>
+                    <source src={(require('./videos/path-compressed.mp4'))} />
+                </video>
                 <p className={styles.p}>
                     This project was made with Angular and deployed through Github Pages.
                 </p>
@@ -84,8 +82,7 @@ export default function OtherProjects() {
                     <span><a className={styles.inlineLink} href='https://www.pro-football-reference.com/fantasy/'> Pro Football Reference</a></span>. Our search function includes autofill for all fantasy players. Real-time game status is also displayed for each player which is sourced from <span><a className={styles.inlineLink} href="https://www.espn.com/nfl/injuries"> ESPN</a></span>. On top of predictions, historical fantasy data tables are also provided which can be filtered by NFL team/position/year and can be sorted by any table value. This projects is still in progress.
                 </p>
                 <div className={styles.nflVideoWrapper}>
-                    <video className={styles.nflVideo} width="700" height="600" autoPlay muted loop playsInline>
-                        {/* <source src={path} type="video/mp4"/> */}
+                    <video className={styles.nflVideo} width="700" height="400" autoPlay muted loop playsInline>
                         <source src={(require('./videos/nfl-record-compressed.mp4'))} />
                     </video>
                 </div>
