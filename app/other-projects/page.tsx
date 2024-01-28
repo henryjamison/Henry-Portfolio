@@ -3,7 +3,7 @@ import Header from '../components/header';
 import styles from '../styles/other-projects.module.css';
 import { Tweet } from 'react-tweet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { darcula, gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import strings from './asmOutput.js';
 
 export default function OtherProjects() {
@@ -35,7 +35,6 @@ export default function OtherProjects() {
         return tweetIds[randomIndex];
     }
     const id = getRandomTweet();
-
 
     return (
         <main className={styles.main}>

@@ -22,17 +22,18 @@
     align-items: center;
 }
 
-.link {
+.link, .p {
     all: unset;
     color: rgb(107, 114, 128);
     font-family: "Inter-med";
     font-size: 1.5em;
-    text-decoration: underline;
     text-underline-offset: 2px;
     text-align: center;
     margin-top: .5em;
 }
-
+.link{
+    text-decoration: underline;
+}
 .link:hover {
     cursor: pointer;
     color: rgb(28, 29, 33);

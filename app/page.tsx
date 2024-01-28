@@ -30,30 +30,8 @@ export default function Chat() {
     "Do you have any coding experience?",
     "Tell me about yourself.",
     "What do you like to do for fun?",
-    "Where do you go to school?"
+    "Where did you go to school?"
   ]
-
-  // function addMessageToHistory(message:any) {
-  //   // Load the existing conversation history from localStorage
-  //   const conversationHistory = JSON.parse(localStorage.getItem('conversationHistory')!) || [];
-
-  //   // Add the new message to the conversation history
-  //   console.log(message);
-  //   // conversationHistory.push(message);
-
-  //   // Save the updated conversation history to localStorage
-  //   localStorage.setItem('conversationHistory', JSON.stringify(conversationHistory));
-  // }
-
-  // function loadConversationHistory() {
-  //   // Retrieve the conversation history from localStorage
-  //   const conversationHistory = JSON.parse(localStorage.getItem('conversationHistory')!) || [];
-
-  //   // console.log("Convo History" + conversationHistory);
-  // }
-
-  // // Call the function to load the conversation history when the page loads
-  // // loadConversationHistory();
 
   const handleFormSubmit = (e: any) => {
     handleSubmit(e);
