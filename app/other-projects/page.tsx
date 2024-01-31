@@ -61,8 +61,11 @@ export default function OtherProjects() {
                 {/* <h2>Patent Art Twitter Bot</h2> */}
                 <a href="https://twitter.com/PatentArtBot" target='_blank' className={styles.a}>Patent Art Twitter Bot</a>
                 <p className={styles.p}>
-                    This <a href="https://twitter.com/PatentArtBot" target='_blank' className={styles.inlineLink}>project</a> tweets out a random U.S. Patent from <span><a className={styles.inlineLink} href="https://patents.google.com/">Google Patents</a></span> each hour. I think Patent art is super cool looking and is often very detailed, so I decided to make this bot to see what kind of patents are out there. It turns out there are a ton of patents for just about anything you can think of. Tweets include the patent name/number, the current owner/inventor, a link to the Google Patent page, 1-4 images, and an abstract in the replies if available. Only patents with pictures are tweeted.
+                    This <a href="https://twitter.com/PatentArtBot" target='_blank' className={styles.inlineLink}>project</a> tweets out a random U.S. Patent from <span><a className={styles.inlineLink} href="https://patents.google.com/">Google Patents</a></span> each hour. I think Patent art is super cool looking and is often very detailed, so I decided to make this bot to see what kind of patents are out there. Tweets include the patent name/number, the current owner/inventor, a link to the Google Patent page, 1-4 images, and an abstract in the replies if available. Only patents with pictures are tweeted.
                 </p>
+                <p className={styles.tweetDesc}>
+                        Below is an example of a random tweet. Throughout working on this project I have found so many interesting/useful/useless/intricate patents that I would have never known about othewrwise.
+                    </p>
                 <div className={styles.desc}>
                     {/* For light theme tweets */}
                     {/* <div className={styles.tweetWrapper} data-theme="light"> */}
@@ -70,9 +73,9 @@ export default function OtherProjects() {
                         {/* Possibly have a function that gets most recent tweet id? */}
                         <Tweet id={id} />
                     </div>
-                    <p className={styles.tweetDesc}>
+                    {/* <p className={styles.tweetDesc}>
                         Above is an example of a random tweet. Throughout working on this project I have found so many interesting/useful/useless/intricate patents that I would have never known about othewrwise.
-                    </p>
+                    </p> */}
                     <p className={styles.p}>
                         This project was made with Python, Twitter API v2, and runs on a cron schedule through GitHub actions.
                     </p>
@@ -82,7 +85,7 @@ export default function OtherProjects() {
                 <a href="#projectThree" className={styles.a}>NFL Fantasy Football Point Predictor</a>
                 <p className={styles.p}>
                     Im a big fan of fantasy football, so for my Capstone project my partner and I decided to make a score predictor model trained on data we sourced. The predictions displayed are for the current NFL week. This was my first introduction to training models and using Scikit learn. We sourced all of our data from
-                    <span><a className={styles.inlineLink} href='https://www.pro-football-reference.com/fantasy/'> Pro Football Reference</a></span>. Our search function includes autofill for all fantasy players. Real-time game status is also displayed for each player which is sourced from <span><a className={styles.inlineLink} href="https://www.espn.com/nfl/injuries"> ESPN</a></span>. On top of predictions, historical fantasy data tables are also provided which can be filtered by NFL team/position/year and can be sorted by any table value. This projects is still in progress.
+                    <span><a className={styles.inlineLink} href='https://www.pro-football-reference.com/fantasy/'> Pro Football Reference</a></span>. Our search function includes autofill for all fantasy players. Real-time game status is also displayed for each player which is sourced from <span><a className={styles.inlineLink} href="https://www.espn.com/nfl/injuries"> ESPN</a></span>. On top of predictions, historical fantasy data tables are also provided which can be filtered by NFL team/position/year and can be sorted by any table value.
                 </p>
                 <div className={styles.nflVideoWrapper}>
                 <LazyLoad>
@@ -115,7 +118,7 @@ export default function OtherProjects() {
                 />
                 </div> */}
                 <p className={styles.p}>
-                    Below is a sample input file written in y86 assembly, this code resembles a function that finds the absolute value of a function.
+                    Below is a sample input file written in y86 assembly, this code resembles a function that finds the absolute value of a number.
                 </p>
                 <div className={styles.codeWrapper}>
                     <SyntaxHighlighter className={styles.code} language="x86-asm" style={gruvboxDark}>
