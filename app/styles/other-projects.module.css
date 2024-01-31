@@ -21,13 +21,14 @@
     margin-bottom: 10px;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Inter';
 }
 
 .a {
     all: unset;
     color: rgb(107, 114, 128);
-    font-family: "Inter-med";
     font-size: 1.5em;
+    font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 2px;
     text-align: center;
@@ -42,7 +43,7 @@
 .p {
     color: rgb(107, 114, 128);
     line-height: 1.5em;
-    font-family: 'Inter-med';
+    font-weight: 500;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -59,7 +60,7 @@
     cursor: pointer;
     color: rgb(107, 114, 128);
     line-height: 1em;
-    font-family: 'Inter-med';
+    font-weight: 700;
 }
 
 .inlineLink:hover {
@@ -88,7 +89,6 @@
 .tweetDesc {
     color: rgb(107, 114, 128);
     line-height: 1.5em;
-    font-family: 'Inter-med';
     margin-left: 5%;
     margin-right: 5%;
 }

@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Inter';
   src: url(../fonts/Inter/static/Inter-Regular.ttf) format('opentype');
 }
@@ -6,7 +6,7 @@
 @font-face {
   font-family: 'Inter-med';
   src: url(../fonts/Inter/static/Inter-Medium.ttf) format('opentype');
-}
+} */
 
 .main {
   display: flex;
@@ -186,14 +186,17 @@
 .innerStart p {
   color: rgb(107, 114, 128);
   line-height: 1em;
-  font-family: 'Inter-med';
+  font-family: 'Inter';
+  font-weight: 500;
   margin-top: .5em;
   margin-bottom: .5em;
 
 }
 
 .innerStart h3 {
-  font-family: 'Inter-med';
+  font-family: 'Inter';
+  /* font-weight: 500; */
+
 }
 
 .upperAbout {

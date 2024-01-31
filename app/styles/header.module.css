@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: 'Inter-med';
   src: url(../fonts/Inter/static/Inter-Medium.ttf) format('opentype');
-}
+} */
 .links {
   display: flex;
   flex-direction: row;
@@ -30,7 +30,8 @@
 .a{
   all:unset;
   color: rgb(107,114,128);
-  font-family: "Inter-med";
+  font-family: 'Inter';
+  font-weight: 500;
   font-size: 1.5em;
   /* text-decoration: underline;
   text-underline-offset: 2px; */

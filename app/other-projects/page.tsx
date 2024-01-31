@@ -5,6 +5,8 @@ import { Tweet } from 'react-tweet';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import strings from './asmOutput.js';
+import LazyLoad from 'react-lazy-load';
+
 
 export default function OtherProjects() {
     const inputCode = strings[0];
@@ -45,9 +47,11 @@ export default function OtherProjects() {
                 <p className={styles.p}>
                     This project focuses on visualizing the <span><a className={styles.inlineLink} href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's Pathfinding Algorithm</a></span> in real time. I was introduced to pathfinding visualization a few years ago and knew I wanted to make a project like this ever since. This project allows the user to draw their own walls on the grid to create their own paths, or they can generate a random one. Visual elements displayed on the grid can also be changed by the user.
                 </p>
-                <video className={styles.video} width="700" height="500" autoPlay muted loop playsInline>
-                    <source src={(require('./videos/path-compressed.mp4'))} />
-                </video>
+                <LazyLoad>
+                    <video className={styles.video} width="700" height="500" autoPlay muted loop playsInline poster='../../public/path-cropped.png'>
+                        <source src={(require('./videos/path-compressed.mp4'))} />
+                    </video>
+                </LazyLoad>
                 <p className={styles.p}>
                     This project was made with Angular and deployed through Github Pages.
                 </p>
@@ -57,7 +61,7 @@ export default function OtherProjects() {
                 {/* <h2>Patent Art Twitter Bot</h2> */}
                 <a href="https://twitter.com/PatentArtBot" target='_blank' className={styles.a}>Patent Art Twitter Bot</a>
                 <p className={styles.p}>
-                    This project tweets out a random U.S. Patent from <span><a className={styles.inlineLink} href="https://patents.google.com/">Google Patents</a></span> each hour. I think Patent art is super cool looking and is often very detailed, so I decided to make this bot to see what kind of patent art is out there. It turns out there are a ton of patents out there for just about anything you can think of. Tweets include the patent name, the current owner/inventor, the patent number, a link to the Google Patent page, 1-4 images, and an abstract in the replies if available. Only patents with pictures are tweeted.
+                    This project tweets out a random U.S. Patent from <span><a className={styles.inlineLink} href="https://patents.google.com/">Google Patents</a></span> each hour. I think Patent art is super cool looking and is often very detailed, so I decided to make this bot to see what kind of patents are out there. It turns out there are a ton of patents for just about anything you can think of. Tweets include the patent name/number, the current owner/inventor, a link to the Google Patent page, 1-4 images, and an abstract in the replies if available. Only patents with pictures are tweeted.
                 </p>
                 <div className={styles.desc}>
                     {/* For light theme tweets */}
@@ -70,7 +74,7 @@ export default function OtherProjects() {
                         Above is an example of a random tweet. Throughout working on this project I have found so many interesting/useful/useless/intricate patents that I would have never known about othewrwise.
                     </p>
                     <p className={styles.p}>
-                        This project was made with python, Twitter API v2, and runs on a cron schedule through GitHub actions.
+                        This project was made with Python, Twitter API v2, and runs on a cron schedule through GitHub actions.
                     </p>
                 </div>
             </div>
@@ -81,12 +85,14 @@ export default function OtherProjects() {
                     <span><a className={styles.inlineLink} href='https://www.pro-football-reference.com/fantasy/'> Pro Football Reference</a></span>. Our search function includes autofill for all fantasy players. Real-time game status is also displayed for each player which is sourced from <span><a className={styles.inlineLink} href="https://www.espn.com/nfl/injuries"> ESPN</a></span>. On top of predictions, historical fantasy data tables are also provided which can be filtered by NFL team/position/year and can be sorted by any table value. This projects is still in progress.
                 </p>
                 <div className={styles.nflVideoWrapper}>
-                    <video className={styles.nflVideo} width="700" height="400" autoPlay muted loop playsInline>
+                <LazyLoad>
+                    <video className={styles.nflVideo} width="700" height="400" autoPlay muted loop playsInline poster='../../public/nfl-cropped.png'>
                         <source src={(require('./videos/nfl-record-compressed.mp4'))} />
                     </video>
+                </LazyLoad>
                 </div>
                 <p className={styles.p}>
-                    This project was made with python and we used flask for our front-end. For our model we used the Scikit learn package.
+                    This project was made with Python, we used Flask for our front-end framework and the Scikit-learn package for our model.
                 </p>
             </div>
             <div id='projectFour' className={styles.projectFour}>
