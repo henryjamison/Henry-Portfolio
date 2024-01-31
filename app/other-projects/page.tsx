@@ -45,7 +45,7 @@ export default function OtherProjects() {
                 {/* <h2>Dijkstra's Pathfinding Algorithm Visualization</h2> */}
                 <a href="https://henryjamison.github.io/PathFinding/" target='_blank' className={styles.a}>Dijkstra's Pathfinding Algorithm Visualization</a>
                 <p className={styles.p}>
-                    This project focuses on visualizing the <span><a className={styles.inlineLink} href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's Pathfinding Algorithm</a></span> in real time. I was introduced to pathfinding visualization a few years ago and knew I wanted to make a project like this ever since. This project allows the user to draw their own walls on the grid to create their own paths, or they can generate a random one. Visual elements displayed on the grid can also be changed by the user.
+                    This project focuses on visualizing the <span><a className={styles.inlineLink} href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's Pathfinding Algorithm</a></span> in real time. I was introduced to pathfinding visualization a few years ago and knew I wanted to make a project like this ever since. This project allows the user to draw their own walls on the grid to create their own paths, or they can generate a random one. Visual elements displayed on the grid can also be changed by the user. Click   <a href="https://henryjamison.github.io/PathFinding/" target='_blank' className={styles.inlineLink}>here</a> to see it!
                 </p>
                 <LazyLoad>
                     <video className={styles.video} width="700" height="500" autoPlay muted loop playsInline poster='../../public/path-cropped.png'>
@@ -61,7 +61,7 @@ export default function OtherProjects() {
                 {/* <h2>Patent Art Twitter Bot</h2> */}
                 <a href="https://twitter.com/PatentArtBot" target='_blank' className={styles.a}>Patent Art Twitter Bot</a>
                 <p className={styles.p}>
-                    This project tweets out a random U.S. Patent from <span><a className={styles.inlineLink} href="https://patents.google.com/">Google Patents</a></span> each hour. I think Patent art is super cool looking and is often very detailed, so I decided to make this bot to see what kind of patents are out there. It turns out there are a ton of patents for just about anything you can think of. Tweets include the patent name/number, the current owner/inventor, a link to the Google Patent page, 1-4 images, and an abstract in the replies if available. Only patents with pictures are tweeted.
+                    This <a href="https://twitter.com/PatentArtBot" target='_blank' className={styles.inlineLink}>project</a> tweets out a random U.S. Patent from <span><a className={styles.inlineLink} href="https://patents.google.com/">Google Patents</a></span> each hour. I think Patent art is super cool looking and is often very detailed, so I decided to make this bot to see what kind of patents are out there. It turns out there are a ton of patents for just about anything you can think of. Tweets include the patent name/number, the current owner/inventor, a link to the Google Patent page, 1-4 images, and an abstract in the replies if available. Only patents with pictures are tweeted.
                 </p>
                 <div className={styles.desc}>
                     {/* For light theme tweets */}
