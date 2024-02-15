@@ -53,7 +53,7 @@ export default function OtherProjects() {
                     </video>
                 </LazyLoad>
                 <p className={styles.p}>
-                    This project was made with Angular and deployed through Github Pages.
+                    This project was made with TypeScript, HTML/CSS, and I used Angular as a front-end framework. This website is deployed and hosted through Github Pages.
                 </p>
 
             </div>
