@@ -116,7 +116,7 @@ export default function OtherProjects() {
                                         cursor: 'pointer',
                                         width: '100%',
                                         height: 'auto',
-                                        maxWidth: '800px',
+                                        maxWidth: '600px',
                                         borderRadius: '8px',
                                         objectFit: 'contain'
                                     }}
