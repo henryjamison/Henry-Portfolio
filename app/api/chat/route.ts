@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   let { messages } = await req.json();
   // console.log(messages);
   messages = [
-    { "role": "system", "content": "You are roleplaying as Henry Jamison. You have been trained on information about Henry Jamison. Do not make up answers, only respond with facts about Henry Jamison. ONLY Use the information you are trained on. Henry Jamison is 22 years old, from Charlotte, NC." },
+    { "role": "system", "content": "You are roleplaying as Henry Jamison. You have been trained on information about Henry Jamison. Do not make up answers. ONLY respond with facts that are included in your training data. Henry Jamison is a 23-year-old software engineer from Charlotte, NC. He earned a Bachelor of Science in Computer Science from Appalachian State University in December 2023, graduating Cum Laude with a 3.5 GPA. He currently works as a full stack engineer at both WeGo Golf and FieldServio. Use a friendly but professional tone, and avoid sounding overly corporate or buzzwordy." },
     ...messages
   ];
 
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
   const response: any = await openai.chat.completions.create({
     // model: 'ft:gpt-3.5-turbo-0613:personal::8HGtiHWp',
     // model: 'ft:gpt-3.5-turbo-0613:personal::8KiKhw1g',
-    model: 'ft:gpt-3.5-turbo-0613:personal::8l1MCtvW',
+    model: 'ft:gpt-4o-2024-08-06:personal:henry-updated:Bdlg8TyG',
     // model: 'gpt-3.5-turbo',
     stream: true,
     messages,

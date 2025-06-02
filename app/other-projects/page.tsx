@@ -6,6 +6,12 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import strings from './asmOutput.js';
 import LazyLoad from 'react-lazy-load';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import React, { useState } from 'react';
+import LazyVideo from '../components/LazyVideo';
 
 
 export default function OtherProjects() {
@@ -38,24 +44,92 @@ export default function OtherProjects() {
     }
     const id = getRandomTweet();
 
+    // Add your image paths here
+    const wegoImages = [
+        '/WeGo1.png',
+        '/WeGo2.png',
+        '/WeGo3.png',
+        '/WeGo4.png',
+        '/WeGo5.png',
+        '/WeGo6.png',
+        '/WeGo7.png',
+        '/WeGo8.png',
+        '/WeGo9.png',
+    ];
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalImg, setModalImg] = useState<string | null>(null);
+
+    function openModal(imgSrc: string) {
+        setModalImg(imgSrc);
+        setModalOpen(true);
+    }
+
+    function closeModal() {
+        setModalOpen(false);
+        setModalImg(null);
+    }
+
     return (
         <main className={styles.main}>
             <Header />
+
             <div className={styles.projectOne}>
                 {/* <h2>Dijkstra's Pathfinding Algorithm Visualization</h2> */}
                 <a href="https://henryjamison.github.io/PathFinding/" target='_blank' className={styles.a}>Dijkstra's Pathfinding Algorithm Visualization</a>
                 <p className={styles.p}>
                     This project focuses on visualizing the <span><a className={styles.inlineLink} href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's Pathfinding Algorithm</a></span> in real time. I was introduced to pathfinding visualization a few years ago and knew I wanted to make a project like this ever since. This project allows the user to draw their own walls on the grid to create their own paths, or they can generate a random one. Visual elements displayed on the grid can also be changed by the user. Click   <a href="https://henryjamison.github.io/PathFinding/" target='_blank' className={styles.inlineLink}>here</a> to see it!
                 </p>
-                <LazyLoad>
-                    <video className={styles.video} width="700" height="500" autoPlay muted loop playsInline poster='../../public/path-cropped.png'>
-                        <source src={(require('./videos/path-compressed.mp4'))} />
-                    </video>
-                </LazyLoad>
+                <LazyVideo
+                    src="https://vezkcwoxxnwe1otz.public.blob.vercel-storage.com/path-compressed-s55mZCyDRmiGWvh9TXdFqym7BGAYqB.mp4"
+                    poster="/path-cropped.png"
+                    className={styles.video}
+                    props={{
+                        width: '700',
+                        height: '500'
+                    }}
+                />
                 <p className={styles.p}>
                     This project was made with TypeScript, HTML/CSS, and I used Angular as a front-end framework. This website is deployed and hosted through Github Pages.
                 </p>
 
+            </div>
+
+                {/* New WeGo Golf Project Section */}
+                <div className={styles.projectOne}>
+                <a href="https://wego.golf" target='_blank' className={styles.a}>WeGo Golf - Internal Operations System</a>
+                <div className={styles.carouselWrapper}>
+                    <Swiper
+                        modules={[Autoplay]}
+                        spaceBetween={20}
+                        slidesPerView={1}
+                        loop={true}
+                        autoplay={{ delay: 4000, disableOnInteraction: false }}
+                        style={{ width: '100%', height: '100%', marginTop: '10px' }}
+                    >
+                        {wegoImages.map((src, idx) => (
+                            <SwiperSlide key={idx} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <img
+                                    src={src}
+                                    alt={`WeGo Golf screenshot ${idx + 1}`}
+                                    style={{
+                                        cursor: 'pointer',
+                                        width: '100%',
+                                        height: 'auto',
+                                        maxWidth: '800px',
+                                        borderRadius: '8px',
+                                        objectFit: 'contain'
+                                    }}
+                                    onClick={() => openModal(src)}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                <p className={styles.p}>
+                    Independently built a full-stack internal operations system from the ground up, covering event planning, employee scheduling/management, time tracking and reporting. Integrated Google Calendar to support real-time event syncing and reminders.<br />
+                    <b>Tech stack:</b> React, Supabase, Cloudflare, and Google APIs.
+                </p>
             </div>
             <div className={styles.projectTwo}>
                 {/* <h2>Patent Art Twitter Bot</h2> */}
@@ -90,7 +164,7 @@ export default function OtherProjects() {
                 <div className={styles.nflVideoWrapper}>
                 <LazyLoad>
                     <video className={styles.nflVideo} width="700" height="400" autoPlay muted loop playsInline poster='../../public/nfl-cropped.png'>
-                        <source src={(require('./videos/nfl-record-compressed.mp4'))} />
+                        <source src="https://vezkcwoxxnwe1otz.public.blob.vercel-storage.com/nfl-record-compressed-FuTB9kiVOWeOueutUdUTmx8RcNU28Q.mp4" />
                     </video>
                 </LazyLoad>
                 </div>
@@ -149,6 +223,32 @@ export default function OtherProjects() {
                     As a freshman at App State, I made my first practical coding project amid COVID-19. Throughout the pandemic, there were social distancing restrictions at my university gym. With just 10 slots available every hour, and a high demand among 20,000+ students, securing a workout time online became a challenge. Driven by my interest in Python automation at the time, I developed a bot using Selenium to automate the reservation process. I was able to secure a spot every day without the worry of missing out until the restrictions were lifted.
                 </p>
             </div>
+
+            {modalOpen && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: 0, left: 0, right: 0, bottom: 0,
+                        background: 'rgba(0,0,0,0.8)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 1000
+                    }}
+                    onClick={closeModal}
+                >
+                    <img
+                        src={modalImg!}
+                        alt="Fullscreen"
+                        style={{
+                            maxWidth: '90vw',
+                            maxHeight: '90vh',
+                            borderRadius: '12px',
+                            boxShadow: '0 2px 16px rgba(0,0,0,0.5)'
+                        }}
+                    />
+                </div>
+            )}
         </main>
     );
 }
